@@ -19,4 +19,4 @@ after_success:
 - ./gradlew jacocoTestReport coveralls
 
 notifications:
-    webhooks: https://fathomless-fjord-24024.herokuapp.com/notify
+    webhooks: https://gradle-travisci-coverall.herokuapp.com/notify
