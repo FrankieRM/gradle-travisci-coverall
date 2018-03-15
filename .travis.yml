@@ -16,6 +16,7 @@ cache:
 script: "./gradlew clean build"
 
 before_install:
+  - export CODACY_PROJECT_TOKEN=833ebb1912f94eb79a723a758e23bc31
   - sudo apt-get install jq
   - wget -O ~/codacy-coverage-reporter-assembly-latest.jar $(curl https://api.github.com/repos/codacy/codacy-coverage-reporter/releases/latest | jq -r .assets[0].browser_download_url)
 
