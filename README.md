@@ -1,6 +1,6 @@
 # Gradle + SpringBoot + Travis CI + Coveralls 연동하기
 
-[![Build Status](https://travis-ci.org/jojoldu/gradle-travisci-coverall.svg?branch=master)](https://travis-ci.org/jojoldu/gradle-travisci-coverall) [![Coverage Status](https://coveralls.io/repos/github/jojoldu/gradle-travisci-coverall/badge.svg?branch=master)](https://coveralls.io/github/jojoldu/gradle-travisci-coverall?branch=master)
+[![Build Status](https://travis-ci.org/FrankieRM/gradle-travisci-coverall.svg?branch=master)](https://travis-ci.org/FrankieRM/gradle-travisci-coverall) [![Coverage Status](https://coveralls.io/repos/github/FrankieRM/gradle-travisci-coverall/badge.svg?branch=master)](https://coveralls.io/repos/github/FrankieRM/gradle-travisci-coverall?branch=master)
 
 ![travis](./images/travis.png)
 
