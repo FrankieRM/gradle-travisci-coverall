@@ -2,20 +2,19 @@ language: java
 jdk:
   - openjdk8
 
-branches:
-  only:
-    - master
-
-# Travis CI 서버의 Cache 활성화
 cache:
   directories:
     - '$HOME/.m2/repository'
     - '$HOME/.gradle'
 
-# clean 후 Build (Build시 자동으로 test 수행)
 script: "./gradlew clean build"
 
+before_install:
+  - sudo apt-get install jq
+  - wget -O ~/codacy-coverage-reporter-assembly-latest.jar $(curl https://api.github.com/repos/codacy/codacy-coverage-reporter/releases/latest | jq -r .assets[0].browser_download_url)
+
 after_success:
+  - java -jar ~/codacy-coverage-reporter-assembly-latest.jar -l Java -r build/reports/jacoco/test/jacocoTestReport.xml -t 833ebb1912f94eb79a723a758e23bc31
   - ./gradlew jacocoTestReport coveralls
 
 notifications:
