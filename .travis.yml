@@ -21,6 +21,7 @@ before_install:
 
 after_success:
   - java -jar ~/codacy-coverage-reporter-assembly-latest.jar -t 833ebb1912f94eb79a723a758e23bc31 -l Java -r build/reports/jacoco/test/jacocoTestReport.xml
+  - ls build/reports/jacoco/test
   - ./gradlew jacocoTestReport coveralls
 
 notifications:
