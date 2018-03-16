@@ -11,7 +11,7 @@ script: "./gradlew clean build"
 
 before_install:
   - sudo apt-get install jq
-  - wget -O ~/codacy-coverage-reporter-assembly-latest.jar $(curl https://api.github.com/repos/codacy/codacy-coverage-reporter/releases/latest | jq -r .assets[0].browser_download_url)
+  - wget -O ~/codacy-coverage-reporter-assembly-latest.jar $(curl https://oss.sonatype.org/service/local/repositories/releases/content/com/codacy/codacy-coverage-reporter/3.0.0/codacy-coverage-reporter-3.0.0-assembly.jar)
 
 after_success:
   - java -jar ~/codacy-coverage-reporter-assembly-latest.jar -l Java -r build/reports/jacoco/test/jacocoTestReport.xml -t 833ebb1912f94eb79a723a758e23bc31
