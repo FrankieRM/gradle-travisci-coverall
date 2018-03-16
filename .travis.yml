@@ -15,6 +15,7 @@ before_install:
 
 after_success:
   - ./gradlew jacocoTestReport coveralls
+  - java -jar ~/codacy-coverage-reporter-assembly-latest.jar report -l Java -r build/reports/jacoco/test/jacocoTestReport.xml -t 833ebb1912f94eb79a723a758e23bc31
 
 notifications:
     webhooks: https://gradle-travisci-coverall.herokuapp.com/notify
