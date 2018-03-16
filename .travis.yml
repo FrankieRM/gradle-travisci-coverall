@@ -14,7 +14,7 @@ before_install:
   - wget -O ~/codacy-coverage-reporter-assembly-latest.jar https://oss.sonatype.org/service/local/repositories/releases/content/com/codacy/codacy-coverage-reporter/3.0.0/codacy-coverage-reporter-3.0.0-assembly.jar
 
 after_success:
-  - java -jar ~/codacy-coverage-reporter-assembly-latest.jar build/reports/jacoco/test/jacocoTestReport.xml -t 833ebb1912f94eb79a723a758e23bc31
+  - java -jar ~/codacy-coverage-reporter-assembly-latest.jar jacocoTestReport.xml -l Java -t 833ebb1912f94eb79a723a758e23bc31
   - ./gradlew jacocoTestReport coveralls
 
 notifications:
