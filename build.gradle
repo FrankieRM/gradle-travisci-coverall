@@ -20,6 +20,7 @@ apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 apply plugin: 'com.jfrog.bintray'
+apply plugin: 'maven-publish'
 
 group = 'com.jojoldu'
 version = '0.0.1-SNAPSHOT'
@@ -41,6 +42,17 @@ dependencies {
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 
+publishing {
+	publications {
+		MyPublication(MavenPublication) {
+			from components.java
+			groupId 'com.jojoldu'
+            		artifactId 'gradle-travisci-coverall'
+            		version '1.0'
+		}
+	}
+}
+
 bintray {
     user = 'frankierm'
     key = '8c4592c3ff23419792dd02401bf7bdccc269f4d2'
@@ -57,15 +69,4 @@ bintray {
 	    }
     }
     publications = ['MyPublication']
-}
-
-publishing {
-    publications {
-        MyPublication(MavenPublication) {
-            from components.java
-            groupId 'com.jojoldu'
-            artifactId 'gradle-travisci-coverall'
-            version '1.0'
-        }
-    }
 }
