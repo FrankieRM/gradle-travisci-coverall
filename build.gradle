@@ -59,6 +59,7 @@ bintray {
     pkg {
         repo = 'maven'
         name = 'gradle-project'
+	licenses = ['Apache-2.0']
         vcsUrl = 'https://github.com/FrankieRM/gradle-travisci-coverall.git'
 	version {
 		name = '1.0-Final'
