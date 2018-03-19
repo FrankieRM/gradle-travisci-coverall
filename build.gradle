@@ -56,6 +56,8 @@ publishing {
 bintray {
     user = 'frankierm'
     key = '8c4592c3ff23419792dd02401bf7bdccc269f4d2'
+    publish = true
+    override = true
     pkg {
         repo = 'maven'
         name = 'gradle-project'
